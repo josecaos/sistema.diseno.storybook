@@ -1,17 +1,19 @@
 import MyButton from './stories/MyButtonView.svelte';
 
-export default { title: 'MyButton' }
+export default { title: 'Mi Botón' }
 
-export const withText = () => ({
-  Component: MyButton,
-  props: {
-    buttonText: 'some text',
-  },
+export const Texto = () => ({
+    Component: MyButton,
+    props: {
+        buttonText: 'Agenda digital de cultura',
+        rounded: 3,
+    },
 });
 
-export const withEmoji = () => ({
-  Component: MyButton,
-  props: {
-    buttonText: '😀 😎 👍 💯',
-  },
+export const Emoji = () => ({
+    Component: MyButton,
+    props: {
+        buttonText: '😀 😎 👍 💯',
+        rounded: 3,
+    },
 });
