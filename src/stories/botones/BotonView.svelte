@@ -1,5 +1,5 @@
 <script>
-  import MyButton from "./MyButton.svelte";
+  import MyButton from "./Boton.svelte";
 
   export let buttonText;
   export let rounded;

@@ -1,19 +1,28 @@
-import MyButton from './stories/MyButtonView.svelte';
+import BotonView from './stories/botones/BotonView.svelte';
+import InputTextoView from './stories/formularios/InputTextoView.svelte';
 
-export default { title: 'Mi Botón' }
+export default { title: 'Mis Componentes' }
 
-export const Texto = () => ({
-    Component: MyButton,
+// BotonView
+export const BotonTexto = () => ({
+    Component: BotonView,
     props: {
         buttonText: 'Agenda digital de cultura',
         rounded: 3,
     },
 });
-
-export const Emoji = () => ({
-    Component: MyButton,
+export const BotonEmoji = () => ({
+    Component: BotonView,
     props: {
         buttonText: '😀 😎 👍 💯',
         rounded: 3,
     },
 });
+
+// input texto
+export const InputTextoDefault = () => ({
+    Component:InputTextoView,
+    props: {
+        textoDefault: 'Hola mundo',
+    },
+})
