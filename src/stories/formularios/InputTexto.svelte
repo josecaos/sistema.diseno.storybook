@@ -1,10 +1,14 @@
 <script>
-  export let textoDefault;
+  export let textoValidado;
+  export let textoLabel;
   let valor;
   let color;
   const validaDato = e => {
-    let evento = e.target.value;
-    if (evento === textoDefault) {
+    
+    let textoEvalua = textoValidado.toLowerCase();
+    let evento = e.target.value.toLowerCase();
+
+    if (evento === textoEvalua) {
       valor = true;
       color = "ok";
     } else if (evento === "" || evento === 0) {
@@ -17,39 +21,35 @@
   };
 </script>
 
-<section>
-  <h3>Validación de 1 input texto</h3>
-  <form action="">
-    <label>
-      <input
-        on:keyup={validaDato}
-        id="text"
-        class={color}
-        type="text"
-        name="text"
-        placeholder={textoDefault} />
-    </label>
-    <div id="mensaje" class={color}>
-      {#if !!valor}
-        <!-- valor correcto -->
-        <p>Gracias!</p>
-      {:else if valor === false}
-        <!-- valor error -->
-        <p>Valor no válido</p>
-      {:else if !valor || valor === ''}
-        <!-- valor default -->
-        <small>Escribe: {textoDefault}</small>
-      {/if}
-    </div>
-
-  </form>
-
-</section>
+<label>
+  {textoLabel}
+  <input
+    on:keyup={validaDato}
+    id="text"
+    class={color}
+    type="text"
+    name="text"
+    placeholder={textoValidado} />
+</label>
+<div id="mensaje" class={color}>
+  {#if !!valor}
+    <!-- valor correcto -->
+    <p>Gracias!</p>
+  {:else if valor === false}
+    <!-- valor error -->
+    <p>Valor no válido</p>
+  {:else if !valor || valor === ''}
+    <!-- valor default -->
+    <p>Escribe: {textoValidado}</p>
+  {/if}
+</div>
 
 <style>
   input {
     border: 1px solid gray;
     border-radius: 0.25rem;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
   }
   .error {
     border: 1px solid red;

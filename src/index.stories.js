@@ -23,6 +23,7 @@ export const BotonEmoji = () => ({
 export const InputTextoDefault = () => ({
     Component:InputTextoView,
     props: {
-        textoDefault: 'Hola mundo',
+        textoLabel: 'Valida: ',
+        textoValidado: 'Agenda cultura digital',
     },
 })

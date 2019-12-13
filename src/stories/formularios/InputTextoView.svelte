@@ -1,8 +1,9 @@
 <script>
 import InputTexto from './InputTexto';
 
-export let textoDefault;
+export let textoValidado;
+export let textoLabel;
 
 </script>
 
-<InputTexto {textoDefault}/>
+<InputTexto {textoValidado} {textoLabel}/>
